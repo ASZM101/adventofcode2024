@@ -14,15 +14,15 @@ public class Day2 {
             boolean okDiff = true;
             
             // Part 1
-            for(int i = 0; i < report.length - 1; i++) {
-                if(report[i] > report[i + 1] && i == 0) {
+            for(int r = 0; r < report.length - 1; r++) {
+                if(report[r] > report[r + 1] && r == 0) {
                     increasing = false;
                 }
-                if((!increasing && report[i] < report[i + 1]) || (increasing && report[i] > report[i + 1] && i != 0)) {
+                if((!increasing && report[r] < report[r + 1]) || (increasing && report[r] > report[r + 1] && r != 0)) {
                     ordered = false;
                     problem = true;
                 }
-                if((Math.abs(report[i] - report[i + 1]) < 1) || (Math.abs(report[i] - report[i + 1]) > 3)) {
+                if((Math.abs(report[r] - report[r + 1]) < 1) || (Math.abs(report[r] - report[r + 1]) > 3)) {
                     okDiff = false;
                     problem = true;
                 }
@@ -31,26 +31,26 @@ public class Day2 {
 
             // Part 2
             if(problem) {
-                for(int j = 0; j < report.length; j++) {
+                for(int r1 = 0; r1 < report.length; r1++) {
                     int[] copy = new int[report.length - 1];
-                    int h = 0;
-                    for(int k = 0; k < report.length; k++) {
-                        if(k != j) {
-                            copy[h] = report[k];
-                            h++;
+                    int c1 = 0;
+                    for(int r2 = 0; r2 < report.length; r2++) {
+                        if(r1 != r2) {
+                            copy[c1] = report[r2];
+                            c1++;
                         }
                     }
                     increasing = true;
                     ordered = true;
                     okDiff = true;
-                    for(int i = 0; i < copy.length - 1; i++) {
-                        if(copy[i] > copy[i + 1] && i == 0) {
+                    for(int c2 = 0; c2 < copy.length - 1; c2++) {
+                        if(copy[c2] > copy[c2 + 1] && c2 == 0) {
                             increasing = false;
                         }
-                        if((!increasing && copy[i] < copy[i + 1]) || (increasing && copy[i] > copy[i + 1] && i != 0)) {
+                        if((!increasing && copy[c2] < copy[c2 + 1]) || (increasing && copy[c2] > copy[c2 + 1] && c2 != 0)) {
                             ordered = false;
                         }
-                        if((Math.abs(copy[i] - copy[i + 1]) < 1) || (Math.abs(copy[i] - copy[i + 1]) > 3)) {
+                        if((Math.abs(copy[c2] - copy[c2 + 1]) < 1) || (Math.abs(copy[c2] - copy[c2 + 1]) > 3)) {
                             okDiff = false;
                         }
                     }
@@ -62,7 +62,7 @@ public class Day2 {
             }
             semisafe += ordered && okDiff ? 1 : 0;
         }
-        
+
         scan.close();
         System.out.println("Part 1: " + safe);
         System.out.println("Part 2: " + (semisafe));
