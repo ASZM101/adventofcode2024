@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-public class Day2 {
+public class Day02 {
     public static void main(String[] args) throws FileNotFoundException{
         // Setup
         Scanner scan = new Scanner(new File("input.txt"));

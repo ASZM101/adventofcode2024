@@ -13,10 +13,10 @@ MXMXAXMASX
  */
 import java.util.*;
 import java.io.*;
-public class Day4 {
+public class Day04 {
     public static void main(String[] args) throws FileNotFoundException {
         // Setup
-        Scanner scan = new Scanner(new File("Days/input.txt")); // Update with actual input, REMOVE Days/ before pushing
+        Scanner scan = new Scanner(new File("input.txt")); // Use actual input, ADD Days/ to run, REMOVE Days/ before pushing
         int count = 0;
         List<List<Character>> puzzle = new ArrayList<List<Character>>();
         /*
@@ -29,6 +29,7 @@ public class Day4 {
         - Diagonal left/down
         - Diagonal right/up
         - Diagonal left/up
+        - Overlapping?
          */
         // while(scan.hasNextLine()) {
         //     puzzle.add(Arrays.asList(scan.nextLine().toCharArray()));
